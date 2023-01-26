@@ -1,26 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokedex application compagnion to a Programmez! article
+
+## Get your own copy of this repo on github deployed on Vercel
+
+[![Deploy template](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FJeremie-Chauvel%2Fpokedex-perf-programmez%2Ftree%2Fmain&project-name=pokedex-perf-programmez&repository-name=pokedex-perf-programmez)
+
+## Prerequisites
+
+You need nodejs and pnpm installed to run this project, I recommend [using a nodejs version manager like fnm to install the correct nodejs version](https://github.com/Schniz/fnm#installation).
+
+Then install nodejs and use the correct nodejs version: `fnm install && fnm use`
+and install pnpm: `corepack enable && corepack prepare pnpm@7.13.4 --activate`.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 

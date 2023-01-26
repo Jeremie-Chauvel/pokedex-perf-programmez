@@ -1,0 +1,43 @@
+.callMyPokemon {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000;
+ }
+.form {
+display: flex;
+flex-direction: column;
+gap:0.5rem;
+align-items: flex-start;
+}
+.form label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  outline: none;
+}
+.form button {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}

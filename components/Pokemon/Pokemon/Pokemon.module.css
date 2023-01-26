@@ -1,0 +1,75 @@
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+
+}
+
+.card>.image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(var(--card-rgb), 0.2);
+}
+
+.card span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.card h2 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.image {
+  background: rgba(var(--card-rgb), 0.3);
+  border-radius: var(--border-radius);
+  position: relative;
+  transition: transform 200ms, box-shadow 200ms;
+}
+
+.pokemonId {
+  font-weight: 700;
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0.5rem 0;
+
+}
+
+.pokemonName {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .card:hover span {
+    transform: translateX(4px);
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+  .card {
+    padding: 1rem 2.5rem;
+  }
+
+}

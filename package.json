@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,9 +16,17 @@
     "@types/react-dom": "18.0.10",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
+    "google-libphonenumber": "3.2.32",
+    "libphonenumber-js": "^1.10.18",
+    "lodash": "4.17.21",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.1.5",
+    "@types/google-libphonenumber": "^7.4.23",
+    "@types/lodash": "4.14.191"
   }
 }

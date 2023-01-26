@@ -1,0 +1,25 @@
+.main {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: calc(100vh - 136px);
+  background: linear-gradient(to right,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb))
+}
+
+.pokemonListing {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.pokemonListing a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
