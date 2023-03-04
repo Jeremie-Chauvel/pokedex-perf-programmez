@@ -1,32 +1,27 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import { MAX_POKEMON_ID } from "@/constants/pokemon";
+import {
+  INITIAL_MAX_POKEMON_ID,
+  LAZY_LOADED_POKEMON_IDS,
+} from "@/constants/pokemon";
 import { getPokemon, PokemonResponse } from "@/services/api/pokemon";
 import { Layout } from "@/components/Layout";
-import { useEffect, useState } from "react";
-import { Pokemon } from "@/components/Pokemon";
+import { Pokemon, PokemonLazy } from "@/components/Pokemon";
 
-const inter = Inter({ subsets: ["latin"] });
-type PokemonId = number;
-
-export default function Home() {
-  const [pokemons, setPokemons] = useState<Map<PokemonId, PokemonResponse>>(
-    new Map()
+export async function getStaticProps() {
+  const pokemons = await Promise.all(
+    Array.from({ length: INITIAL_MAX_POKEMON_ID }, (_, index) =>
+      getPokemon(index + 1)
+    )
   );
-  useEffect(() => {
-    const fetchPokemons = async () => {
-      for (let pokemonId = 1; pokemonId <= MAX_POKEMON_ID; pokemonId++) {
-        const pokemon = await getPokemon(pokemonId);
-        setPokemons((pokemons) => new Map(pokemons).set(pokemonId, pokemon));
-      }
-    };
-    fetchPokemons();
-    return () => {
-      setPokemons(new Map());
-    };
-  }, []);
+  return {
+    props: {
+      pokemons,
+    },
+  };
+}
 
+export default function Home({ pokemons }: { pokemons: PokemonResponse[] }) {
   return (
     <>
       <Head>
@@ -40,6 +35,9 @@ export default function Home() {
           <div className={styles.pokemonListing}>
             {[...pokemons.values()].map((pokemon) => (
               <Pokemon key={pokemon.key} pokemon={pokemon} />
+            ))}
+            {LAZY_LOADED_POKEMON_IDS.map((pokemonId) => (
+              <PokemonLazy key={pokemonId} pokemonId={pokemonId} />
             ))}
           </div>
         </div>
