@@ -5,19 +5,21 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <script src="https://www.googletagmanager.com/gtag/js?id=G-9SW98FYM4Z"></script>
-      <Script id="google-analytics" strategy="beforeInteractive">
-        {`
+      <body>
+        <Main />
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-9SW98FYM4Z"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-9SW98FYM4Z');
         `}
-      </Script>
-
-      <body>
-        <Main />
+        </Script>
         <NextScript />
       </body>
     </Html>
